@@ -1,150 +1,408 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Website</title>
-    <style>
-      * {
-        box-sizing: border-box; /*conseillé*/
-      }
-      body {
-        margin: 0; /*conseillé*/
-        font-family: Arial, Helvetica, sans-serif;
-      }
-      .header {
-        text-align: center;
-        padding: 60px;
-        color: white;
-        background-color: #1abc9c;
-      }
-      /*-----------soit-------------*/
-      .navbar {
-        background-color: #333; /*obligatoire-conseillé*/
-        overflow: hidden; /*obligatoire*/
-      }
-      .navbar a {
-        color: white;
-        text-align: center;
-        text-decoration: none;
-        padding: 14px 20px;
-        float: left; /*obligatoire*/
-        display: block; /*obligatoire*/
-        transition: 0.3s; /*facultative*/
-      }
-      /*------------Ou-------------*/
-      /*
-        .navbar {
-            display: flex;
-            background-color: #333;
-        }
-        .navbar a {
-            color: white;
-            padding: 14px 20px;
-            text-decoration: none;
-            text-align: center;
-        }
-        */
-      .navbar a:hover {
-        background-color: #ddd;
-        color: black;
-      }
-      .row {
-        display: flex;
-        flex-wrap: wrap;
-      }
-      .side {
-        flex: 30%;
-        padding: 20px;
-        background-color: #f1f1f1;
-      }
-      .main {
-        flex: 70%;
-        padding: 20px;
-        background-color: white;
-      }
-      .fakeimg {
-        background-color: #aaa;
-        width: 100%;
-        padding: 20px;
-      }
-      .footer h2 {
-        background-color: #ddd;
-        padding: 20px;
-        text-align: center;
-      }
-      /*----------------Soit-------------------*/
-      @media screen and (max-width: 700px) {
-        .side {
-          flex: 100%;
-        }
-        .main {
-          flex: 100%;
-        }
-        .navbar a {
-          float: none;
-        }
-      }
-      /*------------------Ou----------------*/
-      /*
-        @media screen and (max-width: 700px) {
-            .row, .navbar {
-                flex-direction: column;
-            }
-        }
-        */
-    </style>
-  </head>
+  <title>Syndic Bénévole</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
   <body>
-    <div class="header">
-      <h1>Gestion de Copropriété</h1>
-      <p>La vie en copropriété....Vivons mieux ensemble !</p>
-    </div>
-    <div class="navbar">
-      <a href="#">Assemblée Générale</a>
-      <a href="#">Authentification</a>
-      <a href="#">Situation de Caisse</a>
-      <a href="#">Application Mobile</a>
-    </div>
-    <div class="row">
-      <div class="side">
-        <h2>A propos de moi</h2>
-        <h5>Ma photo</h5>
-        <div class="fakeimg" style="height: 200px">Image</div>
-        <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
-        <h3>More Text</h3>
-        <p>Lorem ipsum dolor sit ame.</p>
-        <div class="fakeimg" style="height: 60px">Image</div>
-        <div class="fakeimg" style="height: 60px">Image</div>
-        <div class="fakeimg" style="height: 60px">image</div>
+    <!-- Sidebar/menu -->
+    <nav
+      class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding"
+      style="z-index: 3; width: 300px; font-weight: bold"
+      id="mySidebar"
+    >
+      <br />
+      <a
+        href="javascript:void(0)"
+        onclick="w3_close()"
+        class="w3-button w3-hide-large w3-display-topleft"
+        style="width: 100%; font-size: 22px; color: blue;"
+        >Close Menu</a
+      >
+      <div class="w3-container">
+        <h3 class="w3-padding-64">
+          <b>Syndic<br />Bénévole</b>
+        </h3>
       </div>
-      <div class="main">
-        <h2>TITLE HEADING</h2>
-        <h5>Title description, Dec 7, 2021</h5>
-        <div class="fakeimg" style="height: 200px">Image</div>
-        <p>Some text..</p>
-        <p>
-          Sunt in culpa qui officia deserunt mollit anim id est laborum
-          consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-          exercitation ullamco.
-        </p>
-        <br />
-        <h2>TITLE HEADING</h2>
-        <h5>Title description, Sep 2, 2021</h5>
-        <div class="fakeimg" style="height: 200px">Image</div>
-        <p>Some text..</p>
-        <p>
-          Sunt in culpa qui officia deserunt mollit anim id est laborum
-          consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-          exercitation ullamco.
-        </p>
+      <div class="w3-bar-block">
+        <a
+          href="#"
+          onclick="w3_close()"
+          class="w3-bar-item w3-button w3-hover-white"
+          >Accueil</a
+        >
+        <a
+          href="#vitrine"
+          onclick="w3_close()"
+          class="w3-bar-item w3-button w3-hover-white"
+          >Téléchargement...</a
+        >
+        <a
+          href="#syndicat"
+          onclick="w3_close()"
+          class="w3-bar-item w3-button w3-hover-white"
+          >Syndicat</a
+        >
+        <a
+          href="#conseil"
+          onclick="w3_close()"
+          class="w3-bar-item w3-button w3-hover-white"
+          >Conseil Syndical</a
+        >
+        <a
+          href="#syndic"
+          onclick="w3_close()"
+          class="w3-bar-item w3-button w3-hover-white"
+          >Syndic</a
+        >
+        <a
+          href="#ag"
+          onclick="w3_close()"
+          class="w3-bar-item w3-button w3-hover-white"
+          >Assemblée générale</a
+        >
+        <a
+          href="#cb"
+          onclick="w3_close()"
+          class="w3-bar-item w3-button w3-hover-white"
+          >Compte bancaire</a
+        >
+        <a
+          href="#packages"
+          onclick="w3_close()"
+          class="w3-bar-item w3-button w3-hover-white"
+          >Packages</a
+        >
+        <a
+          href="#contact"
+          onclick="w3_close()"
+          class="w3-bar-item w3-button w3-hover-white"
+          >Contact</a
+        >
       </div>
+    </nav>
+
+    <!-- Top menu on small screens -->
+    <header
+      class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding"
+    >
+      <a
+        href="javascript:void(0)"
+        class="w3-button w3-red w3-margin-right"
+        onclick="w3_open()"
+        >☰</a
+      >
+      <span>Syndic Bénévole</span>
+    </header>
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div
+      class="w3-overlay w3-hide-large"
+      onclick="w3_close()"
+      style="cursor: pointer"
+      title="close side menu"
+      id="myOverlay"
+    ></div>
+
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main" style="margin-left: 340px; margin-right: 40px">
+      <!-- Header -->
+      <div class="w3-container" style="margin-top: 80px" id="vitrine">
+        <h1 class="w3-jumbo"><b>Guide</b></h1>
+        <h1 class="w3-xxxlarge w3-text-red"><b>Téléchargement.</b></h1>
+        <hr style="width: 50px; border: 5px solid red" class="w3-round" />
+      </div>
+
+      <!-- Photo grid (modal) -->
+      <div class="w3-row-padding">
+        <div class="w3-half">
+          <a href="/convocation.docx">Convocation</a>
+          <a href="/convocation.docx">Accusé de réception</a>
+          <a href="/convocation.docx">Procuration</a>
+          <a href="/convocation.docx">Feuille de présence</a>
+          <a href="/convocation.docx">Procès-verbal</a>
+          <a href="/convocation.docx">liste des copropriétaires</a>
+        </div>
+      </div>
+
+      <!-- Syndicat -->
+      <div class="w3-container" id="syndicat" style="margin-top: 75px">
+        <h1 class="w3-xxxlarge w3-text-red"><b>Syndicat.</b></h1>
+        <hr style="width: 50px; border: 5px solid red" class="w3-round" />
+         <h2>Guide</h2>
+<p>Le guide parfait pour apprendre tout ce que vous devez savoir sur la gestion de la copropriété</p>
+        <h3>Syndicat des copropriétaires</h3>
+<p>Organe composé de l’ensemble des copropriétaires, sans aucune formalité. Ainsi, tous les propriétaires d’un lot de la copropriété (appartement, garage, box, local professionnel, etc.) font partie du syndicat des copropriétaires. La seule condition est d’être propriétaire d’un lot de la copropriété. Ainsi, les locataires ne sont pas concernés. En revanche, les <u>propriétaires bailleurs</u>, même s’ils ne vivent pas sur place, font bel et bien partie du syndicat des copropriétaires.</p>
+<p>Organe d’assistance et de consultation, le syndicat de copropriété – représenté par le syndic – contrôle la conservation et la bonne administration de l’immeuble. Son pouvoir d’action s’exerce en <u>assemblée générale des copropriétaires</u>, réunie au moins une fois par an. Au cours de l’assemblée générale annuelle, le syndicat vote notamment.</p>
+<pre>
+•	Le <u>budget prévisionnel</u> de l’année à venir ;
+•	L’approbation des comptes de l’année qui vient de s’écouler ;
+•	Le <u>quitus au syndic</u> : il s’agit d’une résolution qui vise à approuver la gestion du syndic ;
+•	Le <u>changement de syndic</u> ;
+•	Les <u>travaux</u> à mener éventuellement dans l’immeuble ;
+•	La désignation des <u>membres du conseil syndical</u> ;
+•	Toute modification éventuelle du règlement de copropriété.
+•	L’élection des membres du conseil syndical.
+</pre>
+<p>Bien sûr, la liste n’est pas exhaustive. Toutes ces résolutions font l’objet d’un vote selon les règles de majorité fixées dans la loi. Si les décisions sont approuvées en assemblée générale, c’est le syndic qui est chargé de les faire appliquer, sous le contrôle du conseil syndical.</p>
+<p>Dans une <u>copropriété neuve</u>, la copropriété naît au moment de l’achèvement de l’immeuble et de la livraison du premier lot. Le syndicat des copropriétaires est formé à ce moment-là. Si la copropriété est composée de plusieurs bâtiments, on peut créer des syndicats secondaires par bâtiment qui peuvent coexister en plus du syndicat des copropriétaires principal.</p>
+<p></p>Si vous ne pouvez pas assister à l’assemblée générale, sachez que vous pouvez voter par anticipation de l’assemblée générale par correspondance grâce au formulaire annexé à votre <u>convocation</u>. Vous pouvez également <u>donner pouvoir</u> à une tierce personne qui votera en votre nom le jour de l’AG. Toutefois, il convient de rappeler que le pouvoir n’oblige pas le mandataire à respecter vos consignes de votes. Par ailleurs, si le syndicat des copropriétaires a des droits, il a également des obligations. En particulier, il doit respecter les dispositions du règlement de copropriété. À noter que ce règlement intérieur s’applique d’ailleurs également aux locataires. Le syndicat doit également respecter la destination de l’immeuble. Ainsi, si un copropriétaire prévoit de réaliser des travaux qui affecte les parties communes ou change la destination de l’immeuble, il devra en informer les autres copropriétaires et obtenir leur autorisation en assemblée générale.</p>
+<p>Enfin, tous les copropriétaires doivent participer à la collecte des <u>charges de copropriété </u></p>
+
+      </div>
+      <!-- Conseil Syndical -->
+      <div class="w3-container" id="conseil" style="margin-top: 75px">
+        <h1 class="w3-xxxlarge w3-text-red"><b>Conseil Syndical.</b></h1>
+        <hr style="width: 50px; border: 5px solid red" class="w3-round" />
+          <h3>Conseil syndical et copropriété</h3>
+<p>Elu par le syndicat de copropriété, le conseil syndical est composé de copropriétaires ou assimilés – conjoints et représentants légaux. Il élit en son sein un président.<br> Lien entre le syndic et les copropriétaires, il est en charge d’assister et de contrôler le syndic dans l’exercice de ses missions de gestion. Les règles de son fonctionnement sont déterminées dans le règlement de copropriété ou en assemblée générale. Le conseil syndical joue également un rôle consultatif : son avis peut être sollicité pour toutes questions. À noter : dépourvu de personnalité morale, le conseil syndical n’agit pas en justice. Sa responsabilité ne peut pas être engagée.</p>
+
+      </div>
+
+      <!-- Syndic -->
+      <div class="w3-container" id="syndic" style="margin-top: 75px">
+        <h1 class="w3-xxxlarge w3-text-red"><b>Syndic.</b></h1>
+        <hr style="width: 50px; border: 5px solid red" class="w3-round" />
+        <h3>Le syndic de copropriété</h3>
+<p>Professionnel ou bénévole, le syndic de copropriété est désigné en assemblée générale. Sa principale mission est d’administrer l’immeuble, dans le respect des décisions prises en assemblée générale. Représentant légal du <u>syndicat des copropriétaires</u>, il est en charge de la gestion administrative, comptable et financière de la copropriété. Il veille également à la bonne conservation du bâti et fait exécuter les travaux nécessaires. C'est enfin lui qui est en charge de l'envoi des <u>convocations à l'assemblée générale</u>. Pour information, la convocation peut être envoyée par email.</p>
+<p>Ses <u>principales missions</u> sont :</p>
+<pre>
+•	Collecter les charges auprès des copropriétaires de l’immeuble ;
+•	Gérer les impayés ;
+•	Payer les différents prestataires de l’immeuble ;
+•	Assurer la comptabilité ;
+•	Convoquer et tenir au moins une assemblée générale par an ;
+•	Faire respecter les décisions prises en assemblée générale ;
+•	Effectuer le suivi des travaux, le cas échéant ;
+•	Faire respecter les dispositions du règlement de copropriété ;
+•	Représenter le syndicat des copropriétaires dans ses actes et ses actions en justice.
+</pre>
+
+<p>En cas de <u>faute du syndic</u>, il est possible d'engager des poursuites !</p>
+<p>A la charge du <u>syndic de copropriété</u> et du conseil syndical de mettre ensuite à exécution les décisions prises par l’assemblée générale des copropriétaires. Le syndic doit aussi tenir à jour le <u>carnet d'entretien</u>, qui fait état des travaux d’entretien et de maintenance réalisés au sein de l’immeuble.
+Le syndic peut prendre plusieurs formes. La plus connue est le syndic professionnel. Dans ce cas, le syndicat des copropriétaires délègue la gestion de l’immeuble à une société et paie des honoraires pour ce service. Toutefois, le <u>prix du syndic</u> professionnel peut être salé car de nombreux frais annexes s’ajoutent à ces honoraires (frais de photocopies, frais postaux, commission sur les travaux, etc.).
+Pour réaliser des économies, vous pouvez tout à fait passer à l’autogestion. Pour cela, deux choix s’offrent à vous :</p>
+<pre>
+•	Le <u>syndic bénévole</u> : il s’agit d’un copropriétaire qui est élu en assemblée générale pour exercer les fonctions de syndic ;
+•	Le <u>syndic coopératif</u> : ici, c’est le conseil syndical qui exerce les missions de syndic. Le <u>président du conseil syndical</u> est appelé le président-syndic.
+</pre>
+<p>Les <u>avantages du syndic coopératif</u> sont nombreux. En plus des économies, ce modèle permet de se répartir les tâches entre conseillers syndicaux pour être plus efficace et gagner du temps. Le syndic coopératif permet également de retrouver de la transparence dans la gestion et de la convivialité entre voisins.</p>
+      </div>
+       <!-- Assemblée générale -->
+      <div class="w3-container" id="ag" style="margin-top: 75px">
+        <h1 class="w3-xxxlarge w3-text-red"><b>Assemblée générale.</b></h1>
+        <hr style="width: 50px; border: 5px solid red" class="w3-round" />
+        <h3>La convocation d’assemblée générale : définition</h3>
+<p>La convocation d’assemblée générale de <u>copropriété</u> est un document à envoyer en amont de la tenue de l’assemblée générale. C’est l’une des<u> missions du syndic de copropriété</u> de se charger de sa rédaction et de son envoi. Le contenu d’une convocation d’assemblée générale n’est pas laissé au hasard et doit respecter plusieurs règles.
+La tenue d’une assemblée générale doit survenir au moins une fois par an. Le but de cette assemblée est de permettre au <u>syndicat de copropriétaires</u> de se rencontrer et de débattre de différentes questions en relation avec la vie de l’immeuble. Au cours de cette assemblée générale, les différents points à l’ordre du jour seront soumis au vote selon <u>les majorités prévues dans la loi.</u>
+C’est le <u>syndic de copropriété</u> qui doit se charger d’envoyer une convocation à tous les copropriétaires au minimum 21 jours avant la tenue de l’assemblée générale.</p>
+<p>Le délai de 21 jours est calculé à partir du lendemain de la réception de la convocation par les copropriétaires.
+Le syndic de copropriété, le conseil syndical ou un copropriétaire peuvent convoquer d’autres assemblées générales durant l’année. On parle alors d’assemblées générales extraordinaires (AGE). Comme pour une assemblée générale ordinaire, le syndic de copropriété doit respecter un délai de 21 jours pour envoyer les convocations avant la tenue de l’AGE.
+Une assemblée générale peut être convoquée en urgence avec des délais plus courts. La loi prévoit un “délai raisonnable” mais ne précise pas de motifs précis de convocation. 
+Pour être valable, la convocation d’assemblée générale doit être écrite mais peut très bien être envoyée par <u>lettre recommandée électronique</u>. Cela permet de réaliser des économies notamment sur les frais d’envoi.
+C’est également le syndic de copropriété qui tient l’assemblée générale et qui doit faire respecter les résolutions approuvées en AG telles que les <u>travaux de copropriété</u>, les modifications du <u>règlement de copropriété</u>, etc.</p>
+<h4>Le contenu d’une convocation en assemblée générale</h4>
+<p>Le contenu d’une convocation en assemblée générale est assez réglementé. La convocation doit notamment mentionner :</p>
+<p>La date, l’heure et le lieu de tenue de l’assemblée générale :</p>
+<p><b>L’ordre du jour :</b></p>
+<p>L’ordre du jour liste les points qui seront abordés lors de l’assemblée générale. C’est le syndic de copropriété qui établit l’ordre du jour, en collaboration avec le <u>conseil syndical</u>. Les copropriétaires peuvent ajouter des résolutions en contactant le syndic ou le conseil syndical en amont de la réception de la convocation. La demande se fait par l’envoi d’un courrier recommandé avec accusé de réception.</p>
+<h3>LES RÈGLES DE MAJORITÉS EN ASSEMBLÉE GÉNÉRALE : DÉFINITIONS ET APPLICATIONS</h3>
+<p>Lors de l’assemblée générale, le syndicat des copropriétaires se réunit pour débattre des différentes résolutions à l’ordre du jour. Pour faciliter la prise de décision au sein de la <u>copropriété</u>, des règles de majorité sont mises en place par la loi.</p>
+<p>Quatre types de majorités :</p>
+<pre>
+•	La majorité simple ;
+•	La majorité absolue ;
+•	La double majorité ;
+•	Le vote à l’unanimité.
+</pre>
+<p>Dans le cas où un copropriétaire ne peut être présent en assemblée générale, il peut <u>donner son pouvoir</u> à une personne de son choix. Même s’il peut donner des consignes de vote au mandataire, ce dernier n’est pas obligé d’en tenir compte et peut voter comme bon lui suble. Il est donc important de donner son pouvoir à une personne de confiance.</p>
+<h4>La majorité simple en assemblée générale de copropriété</h4>
+<p>Sa particularité est que les voix des copropriétaires absents ne sont pas prises en compte. Pour qu’une résolution soit adoptée en majorité simple, les votes “POUR” doivent être strictement supérieurs aux votes “CONTRE”.</p>
+ 
+<p>Si vous donnez le quitus au syndic, cela signifie que vous approuvez sa gestion. Il sera alors difficile de <u>révoquer votre syndic</u>.</p>
+ 
+<h4>La majorité absolue en assemblée générale de copropriété</h4>
+<p>Sa particularité est que tous les votes des copropriétaires présents, représentés ou absents sont pris en compte. Cela veut dire que les abstentions peuvent influencer le vote.
+Pour être adoptée, une résolution doit recueillir plus de la moitié de tous les votes confondus.</p>
+      </div>
+       <!-- Compte bancaire -->
+      <div class="w3-container" id="cb" style="margin-top: 75px">
+        <h1 class="w3-xxxlarge w3-text-red"><b>Compte bancaire.</b></h1>
+        <hr style="width: 50px; border: 5px solid red" class="w3-round" />
+        <h3>COMMENT OUVRIR UN COMPTE BANCAIRE POUR SA COPROPRIÉTÉ ?</h3>
+<p>Il est obligatoire d’ouvrir un compte bancaire au nom d’une <u>copropriété</u>. 
+C’est au <u>syndic de copropriété</u> que revient la tâche d’ouvrir un compte bancaire séparé au nom de la copropriété.</p>
+<p>Les documents à apporter</P>
+<pre> 
+•	Le procès-verbal d’assemblée générale signé par le président de séance et le secrétaire attestant le passage de la copropriété en syndic bénévole ou coopératif 
+•	La pièce d’identité du syndic bénévole ou du président du conseil syndical si votre copropriété est en syndic coopératif ;
+•	Le règlement de copropriété ;
+•	Une facture récente d’eau et d’électricité au nom du syndicat
+</pre>
+      </div>
+      <!-- The Team -->
+      <div class="w3-row-padding w3-grayscale">
+        <div class="w3-col m4 w3-margin-bottom">
+          <div class="w3-light-grey">
+            <img src="/my.jpg" alt="Mohammed Benhssaen" style="width: 100%" />
+            <div class="w3-container">
+              <h3>Mohammed Benhssaen</h3>
+              <p class="w3-opacity">Développeur Full Stack</p>
+            </div>
+          </div>
+        </div>
+        <div class="w3-col m4 w3-margin-bottom">
+          <div class="w3-light-grey">
+            <img src="/banniere.png" alt="Logiciel" style="width: 100%" />
+            <div class="w3-container">
+              <h3>Version gratuite 1.0</h3>
+              <p class="w3-opacity">Logiciel</p>
+              <p>
+                Une application mobile minimaliste dédiée au syndic bénévole pour la gestion de la copropriété
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="w3-col m4 w3-margin-bottom">
+          <div class="w3-light-grey">
+            <img src="/ecommerce.jpg" alt="ecommerce" style="width: 100%" />
+            <div class="w3-container">
+              <h3>Version payante</h3>
+              <p class="w3-opacity">Logiciel</p>
+              <p>
+               intègre d'autres fonctionnalités (s'adapte de 8 à 30 Lots)
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Packages / Pricing Tables -->
+      <div class="w3-container" id="packages" style="margin-top: 75px">
+        <h1 class="w3-xxxlarge w3-text-red"><b>Packages.</b></h1>
+        <hr style="width: 50px; border: 5px solid red" class="w3-round" />
+      </div>
+
+      <div class="w3-row-padding">
+        <div class="w3-half w3-margin-bottom">
+          <ul class="w3-ul w3-light-grey w3-center">
+            <li class="w3-dark-grey w3-xlarge w3-padding-32">Basic</li>
+            <li class="w3-padding-16">Ordonnance</li>
+            <li class="w3-padding-16">02 Lots</li>
+            <li class="w3-padding-16">Version 1.0</li>
+            <li class="w3-padding-16">période d'essai 30 j</li>
+            <li class="w3-padding-16">Gratuiciel</li>
+            <li class="w3-padding-16">
+              <h2>O.00 MAD</h2>
+              <span class="w3-opacity">MAD = 0.09 EUR</span>
+            </li>
+            <li class="w3-light-grey w3-padding-24">
+              <button
+                class="w3-button w3-white w3-padding-large w3-hover-black"
+              >
+                Sign Up
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <div class="w3-half">
+          <ul class="w3-ul w3-light-grey w3-center">
+            <li class="w3-red w3-xlarge w3-padding-32">Pro</li>
+            <li class="w3-padding-16">Ordonnance</li>
+            <li class="w3-padding-16">30 Lots</li>
+            <li class="w3-padding-16">Application évoulutive</li>
+            <li class="w3-padding-16">à vie</li>
+            <li class="w3-padding-16">Contribuciel</li>
+            <li class="w3-padding-16">
+              <h2>300 MAD</h2>
+              <span class="w3-opacity">MAD = 0.09 EUR</span>
+            </li>
+            <li class="w3-light-grey w3-padding-24">
+              <button class="w3-button w3-red w3-padding-large w3-hover-black">
+                Sign Up
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <div class="w3-container" id="contact" style="margin-top: 75px">
+        <h1 class="w3-xxxlarge w3-text-red"><b>Contact.</b></h1>
+        <hr style="width: 50px; border: 5px solid red" class="w3-round" />
+        <p>
+          L'utilisation du logiciel est strictement reservé aux <b>syndics <mark>Bénévoles</mark></b>. Remplissez le formulaire et l'envoyer pour recevoir votre application!
+        </p>
+        <form action="/action_page.php" target="_blank">
+          <div class="w3-section">
+            <label>Nom</label>
+            <input
+              class="w3-input w3-border"
+              type="text"
+              name="Name"
+              required
+            />
+          </div>
+          <div class="w3-section">
+            <label>Email</label>
+            <input
+              class="w3-input w3-border"
+              type="text"
+              name="Email"
+              required
+            />
+          </div>
+          <div class="w3-section">
+            <label>Message</label>
+            <input
+              class="w3-input w3-border"
+              type="text"
+              name="Message"
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom"
+          >
+            Envoyer Message
+          </button>
+        </form>
+      </div>
+
+      <!-- End page content -->
     </div>
-    <div class="footer">
-      <h2>Footer</h2>
+
+    <!-- W3.CSS Container -->
+    <div
+      class="w3-light-grey w3-container w3-padding-32"
+      style="margin-top: 75px; padding-right: 58px"
+    >
+      <p class="w3-right">
+        Powered by
+        <a
+          href="https://www.w3schools.com/w3css/default.asp"
+          title="W3.CSS"
+          target="_blank"
+          class="w3-hover-opacity"
+          >w3.css</a
+        >
+      </p>
     </div>
+
+    <script>
+      // Script to open and close sidebar
+      function w3_open() {
+        document.getElementById("mySidebar").style.display = "block";
+        document.getElementById("myOverlay").style.display = "block";
+      }
+
+      function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+        document.getElementById("myOverlay").style.display = "none";
+      }
+    </script>
   </body>
 </html>
+

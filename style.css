@@ -107,21 +107,6 @@ button:-moz-focusring,
 [type="submit"]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
-[type="checkbox"],
-[type="radio"] {
-  padding: 0;
-}
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
-  height: auto;
-}
-[type="search"] {
-  -webkit-appearance: textfield;
-  outline-offset: -2px;
-}
-[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
 ::-webkit-file-upload-button {
   -webkit-appearance: button;
   font: inherit;
@@ -132,7 +117,7 @@ body {
   font-family: "Poppins", Verdana, sans-serif;
   font-size: 15px;
   line-height: 1.5;
-  background: linear-gradient(85deg, #006400, #32CD32);
+  background: linear-gradient(to left, #009900, #32CD32);
 }
 html {
   overflow-x: hidden;
